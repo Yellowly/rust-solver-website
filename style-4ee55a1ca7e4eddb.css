@@ -1,0 +1,129 @@
+body{
+    background-color: var(--bg);
+    color:var(--text_color);
+    font-weight: bold;
+    /*font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif*/
+}
+h1{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+}
+hr{
+    border: 1px solid var(--gray);
+    margin-bottom: 50px;
+}
+
+:root{
+    --yellow: #b59f3b;
+    --gray: #3a3a3c;
+    --green: #538d4e;
+    --bg: #121213;
+    --text_color: #ffffff;
+    --lightgray: #818384;
+    --midgray:#5b5b5e;
+}
+
+@keyframes pop{
+    0%{
+        scale:1;
+    }50%{
+        scale:1.1;
+    }100%{
+        scale:1;
+    }
+}
+
+.letter-container {
+    width: 62px;
+    height: 62.5px;
+    position: relative;
+    perspective: 800px;
+    animation-name: pop;
+    animation-duration: 200ms;
+}
+  
+.letter-flipper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 600ms;
+}
+
+.letter-flipper button {
+    margin: 0;
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+
+    color:var(--text_color);
+    text-transform: uppercase;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    line-height: 1;
+    border: none;
+}
+
+.letter-flipper .green{
+    background:var(--green);
+}
+.letter-flipper .yellow{
+    background:var(--yellow);
+}
+.letter-flipper .gray{
+    background:var(--gray);
+}
+
+.letter-flipper .back-button {
+    transform: rotateX( 180deg);
+}
+
+.board-row{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 5px;
+}
+
+.board-grid{
+    width:350px;
+    height:420px;
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    grid-gap: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+    margin:auto;
+}
+
+.input-section{
+
+}
+
+.submit{
+    margin-left:5px;
+    margin-right:5px;
+    font-size:1.25em;
+    font-weight:bold;
+    background-color:var(--lightgray);
+    height:58px;
+    color:var(--text_color);
+    border-radius: 4px;
+    border: none;
+    width: 100px;
+    transition-duration: 200ms;
+}
+
+.buttons{
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    width:fit-content;
+}
+
+.submit:hover{background-color:var(--midgray);}
+
+.submit:active{background-color:var(--gray);}
